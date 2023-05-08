@@ -1,0 +1,58 @@
+{
+	"build": {
+		"beforeDevCommand": "pnpm dev",
+		"beforeBuildCommand": "pnpm build",
+		"devPath": "http://localhost:1420",
+		"distDir": "../dist",
+		"withGlobalTauri": false
+	},
+	"package": {
+		"productName": "tauri-react-editor",
+		"version": "0.1.0"
+	},
+	"tauri": {
+		"allowlist": {
+			"all": false,
+			"shell": {
+				"all": false,
+				"open": true
+			},
+			"dialog": {
+				"confirm": true,
+				"message": true,
+				"save": true
+			},
+			"path": {
+				"all": true
+			},
+			"fs": {
+				"readDir": true,
+				"readFile": true,
+				"removeFile": true,
+				"writeFile": true,
+				"scope": ["$DOCUMENT/*", "$DESKTOP/**/**"]
+			}
+		},
+		"bundle": {
+			"active": true,
+			"icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"],
+			"identifier": "com.kevinSa.dev",
+			"targets": "all"
+		},
+		"security": {
+			"csp": null
+		},
+		"updater": {
+			"active": false
+		},
+		"windows": [
+			{
+				"fullscreen": false,
+				"resizable": true,
+				"title": "tauri-react-editor",
+				"width": 1336,
+				"height": 768
+			}
+		]
+	}
+}
